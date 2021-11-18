@@ -6,7 +6,7 @@
 */
 
 const exclaim = function(str) {
-  return str.toUpperCase() + '!!!'
+  return str.toUpperCase() + '!!!';
 }
 
 // arrow
@@ -23,7 +23,7 @@ expression
 */
 
 const exclaimTwo = str => {
-  return str.toUpperCase() + '!!!'
+  return str.toUpperCase() + '!!!';
 }
 
 arrow
@@ -48,7 +48,7 @@ const exclaimTwo = str => `${str.toUpperCase()} !!!`;
 */
 
 function exclaimFour(str) {
-  return str.toUpperCase() + '!!!'
+  return str.toUpperCase() + '!!!';
 }
 
 // arrow

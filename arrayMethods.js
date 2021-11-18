@@ -18,7 +18,13 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 // CODE HERE
-const evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+const evenNumbers  = mixedNumbers.filter((number) => {
+  if (number % 2 === 0) {
+    return number;
+  }
+});
+
+console.log(evenNumbers);
 
 
 
@@ -38,8 +44,13 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
+
 // CODE HERE
-const postTaxPrices // = prices.map(/* Provide Your Callback Here );
+const postTaxPrices = prices.map((price) => {
+  return price * 1.07;
+});
+
+console.log(postTaxPrices);
 
 
 
@@ -57,8 +68,12 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
 
+const totalPopulation = populations.reduce((acc, num) => {
+  return acc + num;
+}, 0);
+
+console.log(totalPopulation);
 
 
 ////////// PROBLEM 4 //////////
@@ -82,8 +97,8 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
-
+const myStrongest  = monstersInYourPocket.filter((monster) => monster.CP > 200);
+console.log(myStrongest);
 
 
 ////////// PROBLEM 5 //////////
@@ -96,10 +111,14 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 // Do not edit code above.
 
 /*
-  Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
+  Use a higher order method to get all the order totals after adding in the sales tax 
+  (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
 */
 
-// CODE HERE
+const result = orders.map((order) => {
+  const tax = order.price * order.tax;
+  return order.price += tax;
+});
 
 
 
@@ -119,4 +138,9 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method(s) to create to get the sum of bobsTotal.
 */
 
-// CODE HERE
+const total = purchases.reduce((acc, purchase) => {
+  if (purchase.owner !== 'Bob') return acc;
+  return acc += purchase.price;
+}, 0)
+
+console.log(total);

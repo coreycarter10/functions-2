@@ -125,8 +125,7 @@ const uniq = (array, callback) => {
     for (let j = 0; j < array.length; j++) {
       if (i !== j) {
         if (array[i] === array[j]) {
-          array.splice(i, 1);
-          console.log(array);
+          array.splice(j, 1);
         }
       }
     }
